@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "acts_like/version"
+require "act_like/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = 'rspec-acts-like-matcher'
+  spec.name          = 'rspec-act-like-matcher'
   spec.version       = ActsLike::VERSION
   spec.authors       = ['Jay Hayes']
   spec.email         = ['ur@iamvery.com']
 
   spec.summary       = %q{An RSpec matcher that tests one type acts like another.}
   spec.description   = %q{An RSpec matcher that tests one type acts like another.}
-  spec.homepage      = 'https://github.com/iamvery/rspec-acts-like-matcher'
+  spec.homepage      = 'https://github.com/iamvery/rspec-act-like-matcher'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
