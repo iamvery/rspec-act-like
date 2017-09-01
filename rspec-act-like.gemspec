@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "act_like/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = 'rspec-act-like-matcher'
+  spec.name          = 'rspec-act-like'
   spec.version       = ActsLike::VERSION
   spec.authors       = ['Jay Hayes']
   spec.email         = ['ur@iamvery.com']
 
   spec.summary       = %q{An RSpec matcher that tests one type acts like another.}
   spec.description   = %q{An RSpec matcher that tests one type acts like another.}
-  spec.homepage      = 'https://github.com/iamvery/rspec-act-like-matcher'
+  spec.homepage      = 'https://github.com/iamvery/rspec-act-like'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
