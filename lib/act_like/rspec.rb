@@ -3,6 +3,7 @@ require 'act_like/matcher'
 RSpec::Matchers.define :act_like do |expected|
   match do |actual|
     matcher = ActLike::Matcher.new(actual, expected)
+    matcher.check
     @offenses = matcher.offenses
     @offenses.empty?
   end
