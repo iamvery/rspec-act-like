@@ -120,4 +120,8 @@ RSpec.describe ActLike::Matcher do
       expect(bad_matcher.offenses).to eq({ arity: ['quack'] })
     end
   end
+
+  describe 'keyword arguments' do
+    it 'matches when public class methods have the same required keyword arguments'
+  end
 end
