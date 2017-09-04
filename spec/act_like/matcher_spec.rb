@@ -14,7 +14,7 @@ RSpec.describe ActLike::Matcher do
       goos = Class.new
 
       good_matcher = described_class.new(duc, duk)
-      bad_matcher = described_class.new(duk, goos)
+      bad_matcher = described_class.new(duc, goos)
       good_matcher.check
       bad_matcher.check
 
@@ -34,7 +34,7 @@ RSpec.describe ActLike::Matcher do
       goos = Class.new
 
       good_matcher = described_class.new(duc, duk)
-      bad_matcher = described_class.new(duk, goos)
+      bad_matcher = described_class.new(duc, goos)
       good_matcher.check
       bad_matcher.check
 
@@ -90,7 +90,7 @@ RSpec.describe ActLike::Matcher do
       end
 
       good_matcher = described_class.new(duc, duk)
-      bad_matcher = described_class.new(duk, goos)
+      bad_matcher = described_class.new(duc, goos)
       good_matcher.check
       bad_matcher.check
 
@@ -112,7 +112,7 @@ RSpec.describe ActLike::Matcher do
       end
 
       good_matcher = described_class.new(duc, duk)
-      bad_matcher = described_class.new(duk, goos)
+      bad_matcher = described_class.new(duc, goos)
       good_matcher.check
       bad_matcher.check
 
