@@ -7,6 +7,7 @@ RSpec.describe 'act_like RSpec matcher' do
 
   class FakeDuck
     def quack(baz); end
+    def do_fake_stuff; end
   end
 
   class Goose
