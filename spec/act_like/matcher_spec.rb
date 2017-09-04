@@ -13,8 +13,8 @@ RSpec.describe ActLike::Matcher do
 
       goos = Class.new
 
-      good_matcher = described_class.new(duc, duk)
-      bad_matcher = described_class.new(duc, goos)
+      good_matcher = described_class.new(duk, duc)
+      bad_matcher = described_class.new(goos, duc)
       good_matcher.check
       bad_matcher.check
 
@@ -33,8 +33,8 @@ RSpec.describe ActLike::Matcher do
 
       goos = Class.new
 
-      good_matcher = described_class.new(duc, duk)
-      bad_matcher = described_class.new(duc, goos)
+      good_matcher = described_class.new(duk, duc)
+      bad_matcher = described_class.new(goos, duc)
       good_matcher.check
       bad_matcher.check
 
@@ -52,7 +52,7 @@ RSpec.describe ActLike::Matcher do
         def self.waddle; end
       end
 
-      matcher = described_class.new(duc, duk)
+      matcher = described_class.new(duk, duc)
       matcher.check
 
       expect(matcher.offenses).to be_empty
@@ -68,7 +68,7 @@ RSpec.describe ActLike::Matcher do
         def waddle; end
       end
 
-      matcher = described_class.new(duc, duk)
+      matcher = described_class.new(duk, duc)
       matcher.check
 
       expect(matcher.offenses).to be_empty
@@ -89,8 +89,8 @@ RSpec.describe ActLike::Matcher do
         def self.quack; end
       end
 
-      good_matcher = described_class.new(duc, duk)
-      bad_matcher = described_class.new(duc, goos)
+      good_matcher = described_class.new(duk, duc)
+      bad_matcher = described_class.new(goos, duc)
       good_matcher.check
       bad_matcher.check
 
@@ -111,8 +111,8 @@ RSpec.describe ActLike::Matcher do
         def quack; end
       end
 
-      good_matcher = described_class.new(duc, duk)
-      bad_matcher = described_class.new(duc, goos)
+      good_matcher = described_class.new(duk, duc)
+      bad_matcher = described_class.new(goos, duc)
       good_matcher.check
       bad_matcher.check
 
