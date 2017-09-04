@@ -1,20 +1,21 @@
 require 'rspec-act-like'
 
 RSpec.describe 'act_like RSpec matcher' do
-  class Duc
+  class RealDuck
     def quack(bar); end
   end
 
-  class Duk
+  class FakeDuck
     def quack(baz); end
+    def do_fake_stuff; end
   end
 
-  class Goos
+  class Goose
     def quack; end
   end
 
   it 'quacks therefore it is' do
-    expect(Duc).to act_like(Duk)
-    expect(Goos).not_to act_like(Duk)
+    expect(FakeDuck).to act_like(RealDuck)
+    expect(Goose).not_to act_like(RealDuck)
   end
 end

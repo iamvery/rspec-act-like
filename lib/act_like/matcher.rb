@@ -18,12 +18,12 @@ module ActLike
     attr_reader :actual, :expected
 
     def check_instance_methods
-      actual
+      expected
         .public_instance_methods
-        .map(&actual.method(:public_instance_method))
+        .map(&expected.method(:public_instance_method))
         .each_with_object(offenses) { |method, offenses|
         begin
-          unless expected.public_instance_method(method.name).arity == method.arity
+          unless actual.public_instance_method(method.name).arity == method.arity
             offenses[:arity] << method.name.to_s
           end
         rescue NameError
@@ -33,12 +33,12 @@ module ActLike
     end
 
     def check_class_methods
-      actual
+      expected
         .public_methods
-        .map(&actual.method(:public_method))
+        .map(&expected.method(:public_method))
         .each_with_object(offenses) { |method, offenses|
         begin
-          unless expected.public_method(method.name).arity == method.arity
+          unless actual.public_method(method.name).arity == method.arity
             offenses[:arity] << "self.#{method.name}"
           end
         rescue NameError
