@@ -1,4 +1,3 @@
-require 'rspec'
 require 'act_like/matcher'
 
 RSpec::Matchers.define :act_like do |expected|
