@@ -1,13 +1,9 @@
+require 'act_like/checks/check'
 require 'act_like/checks/result'
 
 module ActLike
   module Checks
-    class RequiredPositionalArguments
-      def initialize(left, rigth)
-        @left = left
-        @right = rigth
-      end
-
+    class RequiredPositionalArguments < Check
       def compare
         if left_count == right_count
           Result.new(true)
@@ -17,8 +13,6 @@ module ActLike
       end
 
       private
-
-      attr_reader :left, :right
 
       def left_count
         @left_count ||= required(left).count
