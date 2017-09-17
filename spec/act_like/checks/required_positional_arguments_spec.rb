@@ -3,8 +3,8 @@ require 'act_like/checks/required_positional_arguments'
 
 RSpec.describe ActLike::Checks::RequiredPositionalArguments do
   def one(a); end
-  def two(a, b = :default); end
-  def three(a, b); end
+  def two(b, c = :default); end
+  def three(d, e); end
 
   it 'matches when methods have the same required, positional arguments' do
     m1 = method(:one)
