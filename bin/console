@@ -10,5 +10,59 @@ require "rspec-act-like"
 # require "pry"
 # Pry.start
 
+# Parameter types:
+# - req: required, positional argument
+# - opt: optional, positional argument
+# - key: optional, keyword argument
+# - keyreq: required, keyword argument
+# - rest: positional splat
+# - keyrest: keyword splat
+# - block
+#
+# Method interfaces matches if:
+# 1. Same number of required, positional arguments
+# 2. >= number of optional, positional arguments
+# 3. Same required, keyword arguments
+# 4. >= number of optional, keyword arguments
+# 5. Rest if rest
+# 6. Keyrest if keyrest
+# 7. Block if block
+class Lolwat
+  def zero; end
+
+  # parameter types
+  def one(a); end
+  def two(a:); end
+  def three(*a); end
+  def four(**a); end
+  def five(&a); end
+
+  # parameter combinations
+  def six(a, b); end
+  def seven(a, b:); end
+  def eight(a, *b); end
+  def nine(a, **b); end
+  def ten(a, &b); end
+  def eleven(a:, b:); end
+  def twelve(a:, **b); end
+  def thirteen(a:, &b); end
+  def fourteen(*a, b:); end
+  def fifteen(*a, **b); end
+  def sixteen(*a, &b); end
+  def seventeen(**a, &b); end
+  def eighteen(a, b:); end
+  def nineteen(a, b:, **c); end
+  def twenty(a, b:, **c, &d); end
+  def twenty_one(a, *b, **c); end
+  def twenty_two(a, *b, **c, &d); end
+
+  # parameter defaults
+  def twenty_three(a = nil); end
+  def twenty_four(a: nil); end
+  def twenty_five(a = nil, b:); end
+  def twenty_six(a, b: nil); end
+  def twenty_seven(a = nil, b: nil); end
+end
+
 require "irb"
 IRB.start(__FILE__)

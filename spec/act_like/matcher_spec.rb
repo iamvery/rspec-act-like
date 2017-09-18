@@ -119,6 +119,32 @@ RSpec.describe ActLike::Matcher do
       expect(good_matcher.offenses).to be_empty
       expect(bad_matcher.offenses).to eq({ arity: ['quack'] })
     end
+
+    it 'checks required, positional arguments' do
+      duc = Class.new do
+        def quack(tone); end
+      end
+
+      duk = Class.new do
+        def quack(sound, emphasis = '!'); end
+      end
+
+      goos = Class.new do
+        def quack; end
+      end
+
+      good_matcher = described_class.new(duk, duc)
+      bad_matcher = described_class.new(goos, duc)
+      good_matcher.check
+      bad_matcher.check
+
+      expect(good_matcher.offenses).to be_empty
+      expect(bad_matcher.offenses).to eq({ parameters: ["#{goos.inspect}'s `quack` must have 1 required, positional argument."] })
+    end
+
+    it 'checks optional, positional arguments'
+    it 'checks required, keyword arguments'
+    it 'checks optional, keyword arguments'
   end
 
   describe 'keyword arguments' do
